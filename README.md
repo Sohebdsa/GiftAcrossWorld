@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GiftAcrossWorld 🎁
 
-## Getting Started
+A production-quality, premium e-commerce website for sending thoughtful gifts worldwide.
 
-First, run the development server:
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4 + CSS custom properties (design tokens)
+- **State**: Zustand (persisted to localStorage)
+- **Forms**: React Hook Form + Zod validation
+- **Icons**: Lucide React
+- **Fonts**: Playfair Display (headings) + DM Sans (body) via Google Fonts
+
+## Brand Colors
+
+| Token | Value | Usage |
+|---|---|---|
+| `--brand-primary` | `#e87289` | Primary accent, buttons |
+| `--brand-primary-dark` | `#d65d75` | Hover states |
+| `--brand-primary-pale` | `#fce8ed` | Light backgrounds |
+| `--brand-dark` | `#2b2225` | Footer, dark CTAs |
+| `--bg-base` | `#fff0f3` | Page background |
+
+## Setup & Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Production build
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                   # Next.js App Router pages
+│   ├── page.tsx           # Homepage
+│   ├── products/          # Product listing + detail
+│   ├── cart/              # Shopping cart
+│   ├── checkout/          # Multi-step checkout
+│   ├── wishlist/          # Wishlist
+│   ├── account/           # User account + orders
+│   └── auth/login/        # Authentication
+│
+├── components/
+│   ├── home/              # Homepage sections
+│   ├── layout/            # Navbar, Footer
+│   ├── product/           # ProductCard, ProductsClient, ProductDetailClient
+│   └── ui/                # ToastContainer, WhatsAppButton
+│
+├── data/products.ts       # Mock product catalogue (12 products, 6 categories)
+├── store/                 # Zustand stores (cart, wishlist, auth, toast)
+└── types/index.ts         # Full TypeScript type system
+```
 
-## Learn More
+## Pages
 
-To learn more about Next.js, take a look at the following resources:
+| Page | Route | Features |
+|---|---|---|
+| Homepage | `/` | Hero carousel, categories, featured products, bestsellers, testimonials, newsletter |
+| All Gifts | `/products` | Filter by category/country/price, sort, search, pagination |
+| Product Detail | `/products/[slug]` | Gallery, variants, quantity, add to cart, wishlist |
+| Cart | `/cart` | Edit quantities, shipping methods, coupon codes |
+| Checkout | `/checkout` | 3-step form: delivery → payment → review |
+| Wishlist | `/wishlist` | Saved products, move to cart |
+| Account | `/account` | Profile, overview of orders/addresses/wishlist |
+| Address Book | `/account/addresses` | Add, edit, remove, set default shipping addresses |
+| Orders & Tracking | `/account/orders` | Order history with live milestone timeline |
+| Auth | `/auth/login` | Login, register, forgot password |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Demo Credentials
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+Email:    demo@giftacrossworld.com
+Password: Demo@1234
+```
 
-## Deploy on Vercel
+## Coupon Codes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Code | Discount |
+|---|---|
+| `GIFT10` | 10% off (min $30) |
+| `WELCOME20` | 20% off (min $50, max $25 off) |
+| `FLAT5` | $5 off (min $20) |
+| `LOVE15` | 15% off (min $40) |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Delivery Countries
+
+USA · Canada · UK · Australia · New Zealand · Germany · Malaysia
+
+## Future Backend Integration
+
+The service layer is designed for clean integration:
+- Replace mock data in `src/data/products.ts` with API calls to your backend
+- Cart/wishlist stores use `jaw_*` localStorage keys (prefix: `jaw` = Just Across World)
+- Auth store is ready for JWT token injection
+- Checkout form is gateway-ready (Razorpay, Stripe, PayPal)
+
+## WhatsApp Support
+
+- Number: +91 9167261683 / +91 7045561683
+- Email: support@giftacrossworld.com
