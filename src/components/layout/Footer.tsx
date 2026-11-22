@@ -42,7 +42,7 @@ export function Footer() {
               </span>
             </Link>
             <p style={{ fontSize: '0.875rem', color: '#e5d7da', lineHeight: 1.6, marginBottom: '0.5rem', fontWeight: 500 }}>
-              A flagship brand of <strong style={{ color: 'white' }}>R. Gifting Private Limited</strong>.
+              A flagship brand of <strong style={{ color: 'white' }}>R. Gifting</strong>.
             </p>
             <p style={{ fontSize: '0.825rem', color: '#a8979a', lineHeight: 1.65, marginBottom: '1.25rem' }}>
               Spreading happiness, one thoughtful gift at a time. Delivering love, emotion, and celebrations across international borders.
@@ -172,7 +172,7 @@ export function Footer() {
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', padding: '1.25rem 1.5rem', background: '#231b1e' }}>
         <div className="section-container flex flex-col md:flex-row items-center justify-between gap-3">
           <p style={{ fontSize: '0.8rem', color: '#9e8c90' }}>
-            © 2026 <strong>R. Gifting Private Limited</strong>. All rights reserved. | GiftAcrossWorld™
+            © 2026 <strong>R. Gifting</strong>. All rights reserved. | GiftAcrossWorld™
           </p>
           <div className="flex gap-4 flex-wrap">
             {['Privacy Policy', 'Terms of Service', 'Shipping Policy', 'Refund Policy'].map((item) => (
